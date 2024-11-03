@@ -24,6 +24,7 @@
     <style>
       :root {
         --color-dark: #111729;
+        --color-darker: #030617;
         --color-muted-dark: #364153;
         --color-light: #f2f5f9;
         --color-muted-light: #4e80ee33;
@@ -38,6 +39,7 @@
           extend: {
             colors: {
               dark: 'var(--color-dark)',
+              darker: 'var(--color-darker)',
               'muted-dark': 'var(--color-muted-dark)',
               light: 'var(--color-light)',
               'muted-light': 'var(--color-muted-light)',
@@ -56,24 +58,42 @@
         },
       };
     </script>
+
     <!-- Page title  -->
     <title>QR Code Generator by Abu Naser Muhammad Arman</title>
   </head>
 
-  <body class="bg-muted-dark font-Outfit">
-    <main>
-      <!-- logo  -->
-      <div class="w-48">
-        <img src="./assets/logo-qr-generator.svg" alt="" />
+  <body
+    class="bg-dark font-Outfit text-light flex items-center justify-center h-screen">
+    <main class="bg-dark w-[640px] text-center">
+      <!-- Logo -->
+      <div class="w-48 mx-auto">
+        <img
+          src="./assets/logo-qr-generator.svg"
+          alt="QR Code Generator Logo" />
       </div>
-      <form action="">
-        <input type="text" id="text-input" name="text-input" value="" />
+
+      <!-- QR Code container -->
+      <div id="qrcode" class="mt-8"></div>
+
+      <!-- text input form-->
+      <form id="qrForm" class="mt-8">
+        <div
+          class="flex p-1.5 bg-darker rounded-lg items-center border-2 border-vibrant">
+          <input
+            type="text"
+            id="text-input"
+            name="text-input"
+            placeholder="Enter an url"
+            class="w-full h-12 px-8 rounded-lg bg-darker text-dark bg-dark" />
+          <button
+            type="button"
+            id="generate-qr-btn"
+            class="w-36 h-12 -ml-36 bg-vibrant rounded-lg text-light">
+            QR Code
+          </button>
+        </div>
       </form>
     </main>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
-      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"></script>
   </body>
 </html>
