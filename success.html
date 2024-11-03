@@ -81,44 +81,14 @@
       </div>
 
       <!-- QR Code container -->
-      <div id="qrcode" class="mt-8"></div>
-
-      <!-- text input form-->
-      <form
-        id="form"
-        method="get"
-        action="https://api.qrserver.com/v1/create-qr-code/"
-        class="mt-8 flex p-1.5 bg-darker rounded-2xl items-center border-2 border-vibrant">
-        <!-- Changed the input name to "data" cause its required by the API -->
-        <input
-          required
-          type="text"
-          id="text-input"
-          name="data"
-          placeholder="Enter an URL"
-          class="w-full h-12 px-8 rounded-2xl bg-darker font-medium text-light bg-dark focus:bg-dark-muted focus:outline-0 placeholder:text-dark-muted" />
-        <!-- <input type="hidden" name="size" value="200x200" /> -->
-        <!-- Default size -->
-        <button
-          type="submit"
-          id="generate-qr-btn"
-          class="w-36 h-12 -ml-36 bg-vibrant rounded-xl text-light">
-          QR Code
-        </button>
-      </form>
+      <div id="qr-container" class="mt-8"></div>
     </main>
     <script>
-      document
-        .getElementById('form')
-        .addEventListener('submit', function (event) {
-          event.preventDefault();
-          const textInput = document.getElementById('text-input').value;
-          const qrCodeSize = '600x600';
-          const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${textInput}&size=${qrCodeSize}`;
-          window.location.href = `./success.html?QR=${encodeURIComponent(
-            qrCodeUrl
-          )}`;
-        });
+      const qrUrl = new URLSearchParams(window.location.search).get('QR');
+
+      if (qrUrl) {
+        document.getElementById('qr-container').innerHTML = `<img src="${qrUrl}" alt="Generated QR Code" class="mx-auto border border-vibrant rounded-lg" />`;
+      }
     </script>
   </body>
 </html>
