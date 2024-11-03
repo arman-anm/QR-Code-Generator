@@ -25,9 +25,9 @@
       :root {
         --color-dark: #111729;
         --color-darker: #030617;
-        --color-muted-dark: #364153;
+        --color-dark-muted: #364153;
         --color-light: #f2f5f9;
-        --color-muted-light: #4e80ee33;
+        --color-light-muted: #bed7ff;
         --color-vibrant: #3662e3;
       }
     </style>
@@ -40,9 +40,9 @@
             colors: {
               dark: 'var(--color-dark)',
               darker: 'var(--color-darker)',
-              'muted-dark': 'var(--color-muted-dark)',
+              'dark-muted': 'var(--color-dark-muted)',
               light: 'var(--color-light)',
-              'muted-light': 'var(--color-muted-light)',
+              'light-muted': 'var(--color-light-muted)',
               vibrant: 'var(--color-vibrant)',
             },
             fontFamily: {
@@ -64,8 +64,13 @@
   </head>
 
   <body
-    class="bg-dark font-Outfit text-light flex items-center justify-center h-screen">
-    <main class="bg-dark w-[640px] text-center">
+    class="bg-dark font-Outfit text-base text-light flex items-center justify-center min-h-[80vh]">
+    <!-- Background image  -->
+    <img
+      src="./assets/bg-illustration.svg"
+      alt=""
+      class="fixed overflow-hidden max-w-lg w-full translate-x-[54%] translate-y-[6%]" />
+    <main class="w-[640px] text-center">
       <!-- Logo -->
       <div class="w-48 mx-auto">
         <img
@@ -79,17 +84,17 @@
       <!-- text input form-->
       <form id="qrForm" class="mt-8">
         <div
-          class="flex p-1.5 bg-darker rounded-lg items-center border-2 border-vibrant">
+          class="flex p-1.5 bg-darker rounded-2xl items-center border-2 border-vibrant">
           <input
             type="text"
             id="text-input"
             name="text-input"
             placeholder="Enter an url"
-            class="w-full h-12 px-8 rounded-lg bg-darker text-dark bg-dark" />
+            class="w-full h-12 px-8 rounded-2xl bg-darker font-bold text-light bg-dark focus:bg-dark-muted focus:outline-0 placeholder:text-dark-muted" />
           <button
             type="button"
             id="generate-qr-btn"
-            class="w-36 h-12 -ml-36 bg-vibrant rounded-lg text-light">
+            class="w-36 h-12 -ml-36 bg-vibrant rounded-xl text-light">
             QR Code
           </button>
         </div>
