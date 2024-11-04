@@ -9,6 +9,7 @@ tailwind.config = {
         light: 'var(--color-light)',
         'light-muted': 'var(--color-light-muted)',
         vibrant: 'var(--color-vibrant)',
+        'vibrant-muted': 'var(--color-vibrant-muted)',
       },
       fontFamily: {
         outfit: ['Outfit', 'sans-serif'],
