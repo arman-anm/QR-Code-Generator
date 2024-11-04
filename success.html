@@ -44,11 +44,15 @@
         <!-- bg round blob of qr image-->
         <div
           class="absolute bg-vibrant-muted translate-x-[10%] -translate-y-[12.5%] -z-10 top-0 rounded-full w-80 h-80"></div>
+
+        <!-- QR image -->
         <div id="qr-image-container"></div>
 
         <div class="flex gap-8 mt-24 justify-evenly w-full items-center">
           <button
-            class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center">
+            id="qr-image-download-button"
+            class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center"
+            onclick="downloadQrImage()">
             Download
             <span class="text-2xl ml-2 text-light-muted w-5">
               <img src="./assets/download-icon.svg" alt="download icon"
@@ -70,7 +74,14 @@
       if (qrUrl) {
         document.getElementById(
           'qr-image-container'
-        ).innerHTML = `<img src="${qrUrl}" alt="Generated QR Code" class="mx-auto w-60 rounded-2xl p-6 bg-white" />`;
+        ).innerHTML = `<img src="${qrUrl}" alt="Generated QR Code" class="mx-auto w-60 rounded-2xl"/>`;
+      }
+
+      function downloadQrImage() {
+        // Just adding &download=1 will download the image thanks to the api 
+        if (qrUrl) {
+          window.location.href = `${qrUrl}&download=1`;
+        }
       }
     </script>
   </body>

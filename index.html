@@ -14,7 +14,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Customized Tailwind -->
     <script src="./tailwind/customized-tailwind.js"></script>
-    
+
     <!-- Page title  -->
     <title>QR Code Generator by Abu Naser Muhammad Arman</title>
   </head>
@@ -68,10 +68,16 @@
         .addEventListener('submit', function (event) {
           event.preventDefault();
           const textInput = document.getElementById('text-input').value;
-          const qrCodeSize = '600x600';
-          const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${textInput}&size=${qrCodeSize}`;
+          const qrSize = '600x600';
+          const qrMargin = '24x24';
+          const qrCode = '24x24';
+          const qrQZone = '1';
+          const qrFormat = 'png';
+          const qrDownload = '1';
+
+          const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?&margin=${qrMargin}&qzone=${qrQZone}&size=${qrSize}&data=${textInput}`;
           window.location.href = `./success.html?QR=${encodeURIComponent(
-            qrCodeUrl
+            qrUrl
           )}`;
         });
     </script>
