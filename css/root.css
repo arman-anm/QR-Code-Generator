@@ -1,0 +1,12 @@
+/* Font import  */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Variables */
+:root {
+  --color-dark: #111729;
+  --color-darker: #030617;
+  --color-dark-muted: #364153;
+  --color-light: #f2f5f9;
+  --color-light-muted: #bed7ff;
+  --color-vibrant: #3662e3;
+}

@@ -5,61 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
-
-    <!-- Font import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet" />
-
     <!-- CSS -->
     <!-- reset css -->
     <link rel="stylesheet" href="./css/reset.css" />
-
+    <!-- root css (for font & variables) -->
+    <link rel="stylesheet" href="./css/root.css" />
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom CSS Variables in :root -->
-    <style>
-      :root {
-        --color-dark: #111729;
-        --color-darker: #030617;
-        --color-dark-muted: #364153;
-        --color-light: #f2f5f9;
-        --color-light-muted: #bed7ff;
-        --color-vibrant: #3662e3;
-        --color-vibrant-muted: #1f3157;
-      }
-    </style>
-
-    <!-- Customizing Tailwind -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              dark: 'var(--color-dark)',
-              darker: 'var(--color-darker)',
-              'dark-muted': 'var(--color-dark-muted)',
-              light: 'var(--color-light)',
-              'light-muted': 'var(--color-light-muted)',
-              vibrant: 'var(--color-vibrant)',
-              'vibrant-muted': 'var(--color-vibrant-muted)',
-            },
-            fontFamily: {
-              outfit: ['Outfit', 'sans-serif'],
-            },
-            screens: {
-              sm: '640px',
-              md: '768px',
-              lg: '1024px',
-              xl: '1280px',
-            },
-          },
-        },
-      };
-    </script>
+    <!-- Customized Tailwind -->
+    <script src="./tailwind/customized-tailwind.js"></script>
 
     <!-- Page title  -->
     <title>QR Code Generator by Abu Naser Muhammad Arman</title>
@@ -93,11 +47,19 @@
         <div id="qr-image-container"></div>
 
         <div class="flex gap-8 mt-24 justify-evenly w-full items-center">
-          <button class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center">
-            Download <span class="text-2xl ml-2 text-light-muted w-5"> <img src="./assets/download-icon.svg" alt="download icon"></span>
+          <button
+            class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center">
+            Download
+            <span class="text-2xl ml-2 text-light-muted w-5">
+              <img src="./assets/download-icon.svg" alt="download icon"
+            /></span>
           </button>
-          <button class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center">
-            Share <span class="text-2xl ml-2 text-light-muted w-5"> <img src="./assets/share-icon.svg" alt="download icon"></span>
+          <button
+            class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center">
+            Share
+            <span class="text-2xl ml-2 text-light-muted w-5">
+              <img src="./assets/share-icon.svg" alt="download icon"
+            /></span>
           </button>
         </div>
       </div>

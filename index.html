@@ -5,60 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
-
-    <!-- Font import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet" />
-
     <!-- CSS -->
     <!-- reset css -->
     <link rel="stylesheet" href="./css/reset.css" />
-
+    <!-- root css (for font & variables) -->
+    <link rel="stylesheet" href="./css/root.css" />
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom CSS Variables in :root -->
-    <style>
-      :root {
-        --color-dark: #111729;
-        --color-darker: #030617;
-        --color-dark-muted: #364153;
-        --color-light: #f2f5f9;
-        --color-light-muted: #bed7ff;
-        --color-vibrant: #3662e3;
-      }
-    </style>
-
-    <!-- Customizing Tailwind -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              dark: 'var(--color-dark)',
-              darker: 'var(--color-darker)',
-              'dark-muted': 'var(--color-dark-muted)',
-              light: 'var(--color-light)',
-              'light-muted': 'var(--color-light-muted)',
-              vibrant: 'var(--color-vibrant)',
-            },
-            fontFamily: {
-              outfit: ['Outfit', 'sans-serif'],
-            },
-            screens: {
-              sm: '640px',
-              md: '768px',
-              lg: '1024px',
-              xl: '1280px',
-            },
-          },
-        },
-      };
-    </script>
-
+    <!-- Customized Tailwind -->
+    <script src="./tailwind/customized-tailwind.js"></script>
+    
     <!-- Page title  -->
     <title>QR Code Generator by Abu Naser Muhammad Arman</title>
   </head>
