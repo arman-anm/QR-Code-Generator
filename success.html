@@ -29,6 +29,7 @@
         --color-light: #f2f5f9;
         --color-light-muted: #bed7ff;
         --color-vibrant: #3662e3;
+        --color-vibrant-muted: #1F3157;
       }
     </style>
 
@@ -44,9 +45,10 @@
               light: 'var(--color-light)',
               'light-muted': 'var(--color-light-muted)',
               vibrant: 'var(--color-vibrant)',
+              'vibrant-muted': 'var(--color-vibrant-muted)',
             },
             fontFamily: {
-              Outfit: ['Outfit', 'sans-serif'],
+              outfit: ['Outfit', 'sans-serif'],
             },
             screens: {
               sm: '640px',
@@ -64,7 +66,7 @@
   </head>
 
   <body
-    class="bg-dark font-Outfit text-base text-light flex items-center justify-center min-h-[80vh]">
+    class="bg-dark font-outfit text-base text-light flex items-center justify-center min-h-[80vh]">
     <!-- Background image  -->
     <img
       src="./assets/bg-illustration.svg"
@@ -72,7 +74,7 @@
       class="fixed overflow-hidden max-w-lg w-full translate-x-[54%] translate-y-[6%] -z-10" />
     <main class="w-[640px] text-center">
       <!-- Logo -->
-      <div class="w-48 mx-auto">
+      <div class="w-48 mx-auto mb-24">
         <a href="./index.html">
           <img
             src="./assets/logo-qr-generator.svg"
@@ -81,13 +83,21 @@
       </div>
 
       <!-- QR Code container -->
-      <div id="qr-container" class="mt-8"></div>
+       <div class="relative">
+        <!-- bg -->
+        <div class="absolute bg-vibrant-muted translate-x-[50%] -translate-y-[12.5%] -z-10 top-0 rounded-full w-80 h-80"></div>
+         <div id="qr-container">
+       </div>
+
+      </div>
     </main>
     <script>
       const qrUrl = new URLSearchParams(window.location.search).get('QR');
 
       if (qrUrl) {
-        document.getElementById('qr-container').innerHTML = `<img src="${qrUrl}" alt="Generated QR Code" class="mx-auto border border-vibrant rounded-lg" />`;
+        document.getElementById(
+          'qr-container'
+        ).innerHTML = `<img src="${qrUrl}" alt="Generated QR Code" class="mx-auto w-60 rounded-2xl p-6 bg-white" />`;
       }
     </script>
   </body>
