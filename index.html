@@ -76,8 +76,10 @@
           const qrDownload = '1';
 
           const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?&margin=${qrMargin}&qzone=${qrQZone}&size=${qrSize}&data=${textInput}`;
-          window.location.href = `./success.html?QR=${encodeURIComponent(
+          window.location.href = `./success.html?url=${encodeURIComponent(
             qrUrl
+          )}?text-input=${encodeURIComponent(
+            textInput
           )}`;
         });
     </script>
