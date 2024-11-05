@@ -31,4 +31,4 @@ This QR Code Generator allows users to enter a URL and instantly generate a QR c
 3. The generated QR code is displayed on a new page, where users can download the image.
 
 ## Shoutout
-This project is based on the ['QR code generator' ](https://devchallenges.io/challenge/simple-hompage-alarado) Challenge by [DevChallenges](https://devchallenges.io/)  `:)`
+This project is based on the ['QR code generator' ](https://devchallenges.io/challenge/qa-code-generator) Challenge by [DevChallenges](https://devchallenges.io/)  `:)`
