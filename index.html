@@ -28,16 +28,13 @@
       class="fixed overflow-hidden max-w-lg w-full translate-x-[54%] translate-y-[6%] -z-10" />
     <main class="w-[640px] text-center">
       <!-- Logo -->
-      <div class="w-48 mx-auto">
+      <div class="w-32">
         <a href="./index.html">
           <img
             src="./assets/logo-qr-generator.svg"
             alt="QR Code Generator Logo" />
         </a>
       </div>
-
-      <!-- QR Code container -->
-      <div id="qrcode" class="mt-8"></div>
 
       <!-- text input form-->
       <form
@@ -78,8 +75,6 @@
           const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?&margin=${qrMargin}&qzone=${qrQZone}&size=${qrSize}&data=${textInput}`;
           window.location.href = `./success.html?url=${encodeURIComponent(
             qrUrl
-          )}?text-input=${encodeURIComponent(
-            textInput
           )}`;
         });
     </script>

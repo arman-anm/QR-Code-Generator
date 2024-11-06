@@ -33,37 +33,45 @@
 
     <main
       class="text-center flex items-center justify-center w-full min-h-[50vh]">
-      <!-- Background image  -->
+      <!-- Background image left -->
       <img
         src="./assets/bg-illustration.svg"
         alt="background image"
-        class="fixed overflow-hidden max-w-lg w-full -z-10 translate-x-[50%]" />
+        class="fixed overflow-hidden max-w-lg w-full -z-10 -translate-x-[50%] translate-y-[0%]" />
+      <!-- Background image right -->
+        <img
+        src="./assets/bg-illustration.svg"
+        alt="background image"
+        class="fixed overflow-hidden max-w-lg w-full -z-10 translate-x-[50%] translate-y-[0%]" />
 
       <!-- QR Code container -->
       <div class="relative max-w-[640px]">
         <!-- bg round blob of qr image-->
         <div
-          class="absolute bg-vibrant-muted translate-x-[10%] -translate-y-[12.5%] -z-10 top-0 rounded-full w-80 h-80"></div>
+          class="absolute bg-vibrant-muted -translate-x-[12.5%] -translate-y-[12.5%] -z-10 top-0 rounded-full w-80 h-80"></div>
 
         <!-- QR image -->
         <div id="qr-image-container"></div>
 
-        <div class="flex gap-8 mt-24 justify-evenly w-full items-center">
+        <div class="flex flex-col gap-8 mt-20 justify-evenly w-full items-center">
           <a
             href="#"
             id="qr-image-download-button"
-            class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center"
-            Download
-            <span class="text-2xl ml-2 text-light-muted w-5">
+            class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center">
+            <span class="text-2xl mr-2 text-light-muted w-5">
               <img src="./assets/download-icon.svg" alt="download icon"
             /></span>
+
+            Save image
           </a>
-          <a href="./index.html"
-            class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center">
-            Share
-            <span class="text-2xl ml-2 text-light-muted w-5">
-              <img src="./assets/share-icon.svg" alt="download icon"
+          <a
+            href="./index.html"
+            class="bg-vibrant-muted text-light h-14 w-44 rounded-lg flex items-center justify-center">
+            <span class="text-2xl mr-2 text-light-muted w-5">
+              <img src="./assets/create-more-icon.svg" alt="create more icon"
             /></span>
+
+            Create more
           </a>
         </div>
       </div>
@@ -71,23 +79,14 @@
     <script>
       const qrUrl = new URLSearchParams(window.location.search).get('url');
 
-      const textInput = new URLSearchParams(window.location.search).get(
-        'text-input'
-      );
-
       if (qrUrl) {
         document.getElementById(
           'qr-image-container'
         ).innerHTML = `<img src="${qrUrl}" alt="Generated QR Code" class="mx-auto w-60 rounded-2xl"/>`;
 
-
-
         // Making download button functionable
 
-        document.getElementById(
-          'qr-image-download-button'
-        ).innerHTML = 
-        `<a 
+        document.getElementById('qr-image-download-button').innerHTML = `<a 
         href="${qrUrl}&download=1" 
         
         target="_blank"
@@ -95,10 +94,11 @@
         id="qr-image-download-button"
 
         class="bg-vibrant text-light h-14 w-44 rounded-lg flex items-center justify-center">
-        Download
-        <span class="text-2xl ml-2 text-light-muted w-5">
+        <span class="text-2xl mr-2 text-light-muted w-5">
           <img src="./assets/download-icon.svg" alt="download icon"
         /></span>
+        Save image
+        
         </a>`;
       }
     </script>
